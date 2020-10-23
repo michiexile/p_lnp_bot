@@ -25,8 +25,7 @@ jobs:
         run: pip install tweepy
         
       - name: Run the script
-        run: plnp.py
-        shell: python
+        run: python plnp.py
         env:
           CONSUMERKEY: ${{ secrets.CONSUMERKEY }}
           CONSUMERSECRET: ${{ secrets.CONSUMERSECRET }}
