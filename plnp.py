@@ -1,9 +1,9 @@
 import tweepy
 import math
-import sys
+import os
 
-auth = tweepy.OAuthHandler(sys.env["CONSUMERKEY"], sys.env["CONSUMERSECRET"])
-auth.set_access_token(sys.env["ACCESSTOKEN"], sys.env["ACCESSSECRET"])
+auth = tweepy.OAuthHandler(os.environ["CONSUMERKEY"], os.environ["CONSUMERSECRET"])
+auth.set_access_token(os.environ["ACCESSTOKEN"], os.environ["ACCESSSECRET"])
 api = tweepy.API(auth)
 
 recent_primes = list(reversed(api.user_timeline('_primes_')))
