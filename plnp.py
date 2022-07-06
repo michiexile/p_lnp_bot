@@ -6,7 +6,7 @@ auth = tweepy.OAuthHandler(os.environ["CONSUMERKEY"], os.environ["CONSUMERSECRET
 auth.set_access_token(os.environ["ACCESSTOKEN"], os.environ["ACCESSSECRET"])
 api = tweepy.API(auth)
 
-recent_primes = list(reversed(api.user_timeline('_primes_')))
+recent_primes = list(reversed(api.user_timeline(screen_name='_primes_')))
 for prime in recent_primes:
     if not prime.favorited:
         prime.favorite()
